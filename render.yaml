@@ -12,10 +12,12 @@ services:
 
   - type: web
     name: shopping-cart-frontend
-    env: static
+    env: node
     plan: starter
     buildCommand: cd frontend && npm install && npm run build
-    staticPublishPath: frontend/build
+    startCommand: cd frontend && npm start
     envVars:
       - key: REACT_APP_API_URL
-        value: https://shopping-cart-api.onrender.com 
+        value: https://shopping-cart-api.onrender.com
+      - key: PORT
+        value: 3000 
