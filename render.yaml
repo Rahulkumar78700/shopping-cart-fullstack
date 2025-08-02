@@ -2,7 +2,7 @@ services:
   - type: web
     name: shopping-cart-api
     env: go
-    plan: free
+    plan: starter
     buildCommand: go mod download && go build -o main .
     startCommand: ./main
     envVars:
@@ -10,10 +10,9 @@ services:
         value: release
     healthCheckPath: /items
 
-  - type: web
+  - type: static
     name: shopping-cart-frontend
-    env: static
-    plan: free
+    plan: starter
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
     envVars:
