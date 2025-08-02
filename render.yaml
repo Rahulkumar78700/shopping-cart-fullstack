@@ -10,8 +10,9 @@ services:
         value: release
     healthCheckPath: /items
 
-  - type: static
+  - type: web
     name: shopping-cart-frontend
+    env: static
     plan: starter
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/build
