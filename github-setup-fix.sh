@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "🚀 GitHub Repository Setup - Fixed Version"
+echo "=========================================="
+echo ""
+
+# Get current git user
+CURRENT_USER=$(git config --global user.name)
+echo "Current Git user: $CURRENT_USER"
+echo ""
+
+echo "📋 Steps to Fix the Issue:"
+echo ""
+echo "1. Create a new repository under YOUR account:"
+echo "   - Go to https://github.com/new"
+echo "   - Repository name: shopping-cart-app"
+echo "   - Description: Shopping Cart Application with Go backend and React frontend"
+echo "   - Make it Public"
+echo "   - DO NOT initialize with README, .gitignore, or license"
+echo "   - Click 'Create repository'"
+echo ""
+echo "2. Update the remote URL:"
+echo "   git remote set-url origin https://github.com/YOUR_USERNAME/shopping-cart-app.git"
+echo ""
+echo "3. Push the code:"
+echo "   git push -u origin main"
+echo ""
+echo "4. Deploy to Render:"
+echo "   - Go to https://dashboard.render.com/"
+echo "   - Use Manual Deployment (see RENDER_FIX.md)"
+echo ""
+echo "🔗 Alternative: Use GitHub CLI"
+echo "   gh repo create shopping-cart-app --public --source=. --remote=origin --push"
+echo ""
+echo "📖 For detailed deployment instructions, see RENDER_FIX.md" 

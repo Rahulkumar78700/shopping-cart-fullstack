@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: shopping-cart-api
+    env: go
+    plan: free
+    buildCommand: go mod download && go build -o main .
+    startCommand: ./main
+    envVars:
+      - key: GIN_MODE
+        value: release
+    healthCheckPath: /items
+
+  - type: web
+    name: shopping-cart-frontend
+    env: static
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: frontend/build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://shopping-cart-api.onrender.com 
