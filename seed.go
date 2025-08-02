@@ -8,7 +8,7 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
-func main() {
+func seedDatabase() {
 	// Initialize database
 	db, err := gorm.Open("sqlite3", "shopping_cart.db")
 	if err != nil {

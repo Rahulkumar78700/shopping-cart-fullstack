@@ -33,6 +33,9 @@ func main() {
 
 	// Auto migrate the schema
 	db.AutoMigrate(&models.User{}, &models.Item{}, &models.Cart{}, &models.CartItem{}, &models.Order{}, &models.OrderItem{})
+	
+	// Seed the database with initial data
+	seedDatabase()
 
 	// Initialize Gin router
 	r := gin.Default()
